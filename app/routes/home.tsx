@@ -7,7 +7,7 @@ import {useEffect, useState} from "react";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Resumind" },
+    { title: "ResumeMatch" },
     { name: "description", content: "Smart feedback for your dream job!" },
   ];
 }
@@ -40,7 +40,16 @@ export default function Home() {
   }, []);
 
   return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
-    <Navbar />
+    <div className="flex items-center justify-between px-4">
+      <Navbar />
+
+      <button
+          className="loguot-button text-[16px] px-2 py-1 leading-none"
+          onClick={auth.signOut}
+      >
+        Log Out
+      </button>
+    </div>
 
     <section className="main-section">
       <div className="page-heading py-16">
